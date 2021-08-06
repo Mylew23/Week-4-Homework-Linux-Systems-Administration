@@ -37,13 +37,13 @@
         - `sudo useradd sara`
         - `sudo useradd admin`
         - `sudo grep '!' /etc/shadow`  
-    ![grep](/Images/1-1)  
+    ![grep](/Images/1-1.PNG)  
 
 2. Ensure that only the `admin` has general sudo access.
 
     - Command to add `admin` to the `sudo` group: `sudo usermod -a -G sudo admin`
         - To check if access is granted: `sudo grep sudo /etc/group` or `sudo groups admin`
-    ![1-2](/Images/1-2)
+    ![1-2](/Images/1-2.PNG)
 
 ### Step 3: Create User Group and Collaborative Folder
 
@@ -57,8 +57,8 @@
         - `sudo usermod -a -G engineers sam`
         - `sudo usermod -a -G engineers joe`
         - `sudo usermod -a -G engineers amy`
-        - `sudo usermod -a -G engineers sara`
-    ![1-3](/Images/1-3)
+        - `sudo usermod -a -G engineers sara`  
+    ![1-3](/Images/1-3.PNG)
 
 3. Create a shared folder for this group at `/home/engineers`.
 
@@ -67,45 +67,56 @@
 4. Change ownership on the new engineers' shared folder to the `engineers` group.
 
     - Command to change ownership of engineer's shared folder to engineer group: `sudo chmod -R 775 /home/engineers`
-    ![1-4](/Images/1-4)
+    ![1-4](/Images/1-4.PNG)
 
 ### Step 4: Lynis Auditing
 
 1. Command to install Lynis: `sudo apt-get install lynis -y
 
 2. Command to see documentation and instructions: `sudo lynis show commands` or `sudo lynis --help`
-    ![1-5](/Images/1-5)  
-    ![1-5-1](/Images/1-5-1)  
-    ![1-6](/Images/1-6)  
-    ![1-7](/Images/1-7)
-    ![1-8](/Images/1-8)  
+    ![1-5](/Images/1-5.PNG)  
+    ![1-5-1](/Images/1-5-1.PNG)  
+    ![1-6](/Images/1-6.PNG)  
+    ![1-7](/Images/1-7.PNG)
+    ![1-8](/Images/1-8.PNG)  
 
 3. Command to run an audit: `sudo lynis audit system` to run an audit
 
 4. Provide a report from the Lynis output on what can be done to harden the system.
 
     - Screenshot of report output:
-    ![1-9](/Images/1-9)
-    ![1-10](/Images/1-10)
+    ![1-9](/Images/1-9.PNG)
+    ![1-10](/Images/1-10.PNG)
     - `sudo cat /var/log/lynis.log` - to view the logs.
 
 
 ### Bonus
 1. Command to install chkrootkit: `sudo apt-get update`
-    ![1-11](/Images/1-11)
+    ![1-11](/Images/1-11.PNG)
     - `sudo apt install chkrootkit`
-    ![1-12](/Images/1-12)  
+    ![1-12](/Images/1-12.PNG)  
     - `sudo chkrootkit -V`  
-    ![1-13](/Images/1-13)  
+    ![1-13](/Images/1-13.PNG)  
 
 2. Command to see documentation and instructions: `sudo chkrootkit -h`
-    ![1-14](/Images/1-14)
+    ![1-14](/Images/1-14.PNG)
 
 3. Command to run expert mode: `sudo chkrootkit -x`
 
 4. Provide a report from the chrootkit output on what can be done to harden the system.
     - Screenshot of end of sample output:
-    ![1-15](/Images/1-15)
+    ```
+    ! root        20688 pts/0  /bin/sh /usr/sbin/chkrootkit -x
+    ! root        21121 pts/0  ./chkutmp
+    ! root        21123 pts/0  ps axk tty,ruser,args -o tty,pid,ruser,args
+    ! root        21122 pts/0  sh -c ps axk "tty,ruser,args" -o "tty,pid,ruser,args"
+    ! root        20687 pts/0  sudo chkrootkit -x
+    ! sysadmin     2928 pts/0  bash
+    chkutmp: nothing deleted
+    not tested
+    ```
+
+    ![1-15](/Images/1-15.PNG)
 
 ---
 © 2020 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
