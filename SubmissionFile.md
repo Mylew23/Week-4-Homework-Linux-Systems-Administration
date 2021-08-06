@@ -71,7 +71,7 @@
 
 ### Step 4: Lynis Auditing
 
-1. Command to install Lynis: `sudo apt-get install lynis -y
+1. Command to install Lynis: `sudo apt-get install lynis -y`
 
 2. Command to see documentation and instructions: `sudo lynis show commands` or `sudo lynis --help`
     ![1-5](/Images/1-5.PNG)  
