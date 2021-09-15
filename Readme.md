@@ -104,6 +104,14 @@ Despite claims from enthusiasts, Linux is _not_ immune to malware. You will need
 
 After you complete this homework, please make sure to pull the latest Vagrant virtual machine build. 
 
+---
+© 2020 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
+
+## Week 4 Homework Solution: Linux Systems Administration
+
+Refer to the following solution files for the homework worksheets: 
+
+* [Week 4 Homework Solution: Linux Systems Administration](https://github.com/karma-786/Week-4-Homework-Linux-Systems-Administration/blob/main/SubmissionFile.md)  
 
 ---
 © 2020 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
